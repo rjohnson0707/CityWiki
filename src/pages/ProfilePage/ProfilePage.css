@@ -1,0 +1,14 @@
+.Profile {
+  background-color: slategray;
+  height: 100vh;
+  padding-top: 5vh;
+}
+
+.Profile-h1 {
+  color: black;
+  text-align: center;
+}
+
+.Profile-info {
+  margin-left: 2vw;
+}
