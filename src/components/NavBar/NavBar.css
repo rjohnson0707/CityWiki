@@ -1,0 +1,27 @@
+.NavBar {
+  height: 7vh;
+  font-size: 20px;
+  background-color: skyblue;
+  opacity: 0.75;
+}
+
+.NavBar-link {
+  margin: 20px;
+  float: left;
+  color: black;
+}
+
+.NavBar-welcome {
+  color: grey;
+  float: right;
+  margin: 20px;
+  color: black;
+}
+
+.NavBar-logo {
+  color: black;
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: 4vh;
+  margin-right: 5vw;
+}
