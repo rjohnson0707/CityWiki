@@ -7,10 +7,13 @@ import ProfilePage from "../ProfilePage/ProfilePage";
 import SignupPage from "../SignupPage/SignupPage";
 import userService from "../../services/userService";
 import NavBar from "../../components/NavBar/NavBar";
+import CityPage from "../CityPage/CityPage";
+// import * as cityAPI from "../../services/cityAPI";
 
 class App extends Component {
   state = {
     user: userService.getUser(),
+    city: "Chicago",
   };
 
   handleSignupOrLogin = () => {
@@ -21,6 +24,11 @@ class App extends Component {
     userService.logout();
     this.setState({ user: null });
   };
+
+  // handleCitySearch = async (newCity) => {
+  //   await cityAPI.cities;
+  //   this.getCity();
+  // };
 
   render() {
     return (
@@ -67,6 +75,17 @@ class App extends Component {
                 <Redirect to="/login" />
               )
             }
+          />
+          <Route
+            exact
+            path="/citypage"
+            render={({ location }) => (
+              <CityPage
+                user={this.state.user}
+                city={this.state.city}
+                location={location}
+              />
+            )}
           />
         </Switch>
       </div>

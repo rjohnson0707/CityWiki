@@ -1,0 +1,10 @@
+.city-header {
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+  font-family: fantasy;
+}
+
+.city-info {
+  padding-left: 20px;
+}
