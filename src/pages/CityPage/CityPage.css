@@ -8,3 +8,14 @@
 .city-info {
   padding-left: 20px;
 }
+
+.article-div {
+  background-color: lightblue;
+  border: 2px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.map-div {
+  margin-bottom: 10px;
+}
