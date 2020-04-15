@@ -4,7 +4,7 @@ import "./NavBar.css";
 
 const NavBar = (props) => {
   let nav = props.user ? (
-    <div>
+    <div className="container">
       <Link to="/" className="NavBar-link">
         Home
       </Link>

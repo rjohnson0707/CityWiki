@@ -1,3 +1,7 @@
+.container {
+  width: 100vw;
+}
+
 .NavBar {
   height: 7vh;
   font-size: 20px;
@@ -16,6 +20,7 @@
   float: right;
   margin: 20px 20px 0 20px;
   color: black;
+  position: absolute;
 }
 
 .NavBar-logo {
@@ -25,4 +30,5 @@
   font-weight: bolder;
   font-size: 4vh;
   margin: 0 25vw;
+  position: absolute;
 }
