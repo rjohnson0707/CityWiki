@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import "./CityPage.css";
 import { getCurWeatherByLatLng } from "../../services/weatherAPI";
 import { getNYTimes } from "../../services/nytimesAPI";
-import { getRent } from "../../services/rentAPI";
+// import { getRent } from "../../services/rentAPI";
+import { getWebCam } from "../../services/webcamAPI";
+import { getAirport } from "../../services/airportAPI";
+import { getEvents } from "../../services/eventsAPI";
 import Map from "../../components/Map/Map";
 
 class CityPage extends Component {
@@ -11,26 +14,39 @@ class CityPage extends Component {
     lng: null,
     temp: null,
     news: [],
-    rent: null,
+    // rent: null,
+    airport: null,
+    webcams: [],
+    events: [],
   };
 
   async componentDidMount() {
     const lat = this.props.location.state.city.latitude;
     const lng = this.props.location.state.city.longitude;
+    const city = this.props.location.state.city.name;
     const weatherData = await getCurWeatherByLatLng(lat, lng);
     // const city = this.props.location.state.city.name;
-    const citi = await getNYTimes(this.props.location.state.city.name);
+    const webcamInfo = await getWebCam(lat, lng);
+    const arrWebCams = webcamInfo.result.webcams;
+    const citi = await getNYTimes(city);
     let arrCity = citi.response.docs;
-    const rentInfo = await getRent(lat, lng);
+    const airport = await getAirport(lat, lng);
+    const events = await getEvents(city);
+    const arrEvents = events._embedded.events;
+    // const rentInfo = await getRent(lat, lng);
     this.setState({
       lat,
       lng,
       temp: Math.round(weatherData.main.temp),
       icon: weatherData.weather[0].icon,
       news: [...this.state.news, ...arrCity],
-      rent: rentInfo.rent,
+      airportCode: airport.code,
+      airportName: airport.name,
+      // rent: rentInfo.rent,
+      webcams: [...this.state.webcams, ...arrWebCams],
+      events: [...this.state.events, ...arrEvents],
     });
-    console.log(this.state.rent);
+    console.log(arrEvents);
   }
 
   render() {
@@ -44,7 +60,11 @@ class CityPage extends Component {
           <h4>Country: {this.props.location.state.city.country}</h4>
           <h4>Latitude: {this.props.location.state.city.latitude}</h4>
           <h4>Longitude: {this.props.location.state.city.longitude}</h4>
-          <h4>Median Monthly Rent: ${this.state.rent}</h4>
+          {/* <h4>Median Monthly Rent: ${this.state.rent}</h4> */}
+          <h4>
+            Traveling here? Closest Airport -> {this.state.airportCode} -{" "}
+            {this.state.airportName}
+          </h4>
         </div>
         <div>
           {this.state.temp}&deg;
@@ -63,6 +83,22 @@ class CityPage extends Component {
             <div key={index} className="article-div">
               {article.source} --
               {article.lead_paragraph}
+            </div>
+          ))}
+        </div>
+        <div>
+          {this.state.webcams.map((webcam, index) => (
+            <div key={index} className="webcam-div">
+              <img src={webcam.image.current.preview} alt="webcam" />
+              <p>{webcam.title}</p>
+            </div>
+          ))}
+        </div>
+        <div>
+          {this.state.events.map((event, index) => (
+            <div>
+              {event.dates.start.localDate}-{event.name} - {event.url} -{" "}
+              {event._embedded.venues[0].name}
             </div>
           ))}
         </div>
