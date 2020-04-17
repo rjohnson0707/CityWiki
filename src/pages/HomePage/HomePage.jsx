@@ -4,7 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 
 const HomePage = (props) => {
   let main = props.user ? (
-    <div className="HomePage">
+    <div>
       <SearchBar />
     </div>
   ) : (

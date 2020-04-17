@@ -1,7 +1,21 @@
 .LoginPage {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  padding-top: 20vh;
+  padding-right: 10vw;
+  height: 20vh;
+}
+
+.header-footer {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.form-control {
+  border-bottom: 2px solid black;
+}
+
+::-webkit-input-placeholder {
+  color: black;
 }
