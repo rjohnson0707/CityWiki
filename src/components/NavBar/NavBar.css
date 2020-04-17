@@ -1,9 +1,8 @@
-.container {
+.cont {
   width: 100vw;
 }
 
 .NavBar {
-  height: 7vh;
   font-size: 20px;
   background-color: skyblue;
   opacity: 0.75;
@@ -13,22 +12,19 @@
   margin: 20px 20px 0 20px;
   float: left;
   color: black;
+  font-weight: bold;
+}
+
+.NavBar-link:hover {
+  color: rgb(30, 66, 226);
+  text-shadow: 2px black;
 }
 
 .NavBar-welcome {
   color: grey;
   float: right;
-  margin: 20px 20px 0 20px;
-  color: black;
-  position: absolute;
-}
-
-.NavBar-logo {
-  color: black;
-  text-align: center;
-  font-family: cursive;
   font-weight: bolder;
-  font-size: 4vh;
-  margin: 0 25vw;
-  position: absolute;
+  font-size: 25px;
+  margin: 15px 20px 20px 20px;
+  color: black;
 }

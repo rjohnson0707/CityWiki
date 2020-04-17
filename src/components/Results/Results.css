@@ -3,10 +3,20 @@
 }
 
 .city-div {
-  background-color: lightblue;
-  width: 30vw;
-  border: 2px solid black;
+  width: 24vw;
   margin: 5px;
+  color: black;
+  text-align: center;
+}
+
+.city-list {
+  background-color: white;
+  border: 2px solid black;
+  margin: 5px 5px;
+}
+
+.city-list:hover {
+  background-color: rgb(191, 218, 240);
 }
 
 .results-div {
@@ -15,4 +25,10 @@
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
+  margin: 4px, 4px;
+  padding: 4px;
+  height: 40vh;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
 }

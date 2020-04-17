@@ -33,61 +33,63 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar user={this.state.user} handleLogout={this.handleLogout} />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <HomePage
-                user={this.state.user}
-                handleLogout={this.handleLogout}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/signup"
-            render={({ history }) => (
-              <SignupPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/login"
-            render={({ history }) => (
-              <LoginPage
-                handleSignupOrLogin={this.handleSignupOrLogin}
-                history={history}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/profile"
-            render={() =>
-              userService.getUser() ? (
-                <ProfilePage user={this.state.user} />
-              ) : (
-                <Redirect to="/login" />
-              )
-            }
-          />
-          <Route
-            exact
-            path="/citypage"
-            render={({ location }) => (
-              <CityPage
-                user={this.state.user}
-                city={this.state.city}
-                location={location}
-              />
-            )}
-          />
-        </Switch>
+        <div>
+          <NavBar user={this.state.user} handleLogout={this.handleLogout} />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <HomePage
+                  user={this.state.user}
+                  handleLogout={this.handleLogout}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/signup"
+              render={({ history }) => (
+                <SignupPage
+                  history={history}
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/login"
+              render={({ history }) => (
+                <LoginPage
+                  handleSignupOrLogin={this.handleSignupOrLogin}
+                  history={history}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/profile"
+              render={() =>
+                userService.getUser() ? (
+                  <ProfilePage user={this.state.user} />
+                ) : (
+                  <Redirect to="/login" />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/citypage"
+              render={({ location }) => (
+                <CityPage
+                  user={this.state.user}
+                  city={this.state.city}
+                  location={location}
+                />
+              )}
+            />
+          </Switch>
+        </div>
       </div>
     );
   }

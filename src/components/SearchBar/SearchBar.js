@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./SearchBar.css";
 import Results from "../Results/Results";
+import { Button } from "react-materialize";
 
 class SearchBar extends Component {
   state = {
@@ -13,6 +14,9 @@ class SearchBar extends Component {
   };
 
   handleSearch = () => {
+    this.setState({
+      cities: [],
+    });
     this.makeApiCall(this.state.citySearch);
   };
 
@@ -53,18 +57,22 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="searchbar-div">
-        <h1 className="searchbar-h1">Search Area</h1>
-        <input
-          id="searchTyping"
-          type="text"
-          placeholder="search here"
-          className="searchbar-input"
-          onChange={(event) => this.handleOnChange(event)}
-          value={this.state.citySearch}
-        />
-        <button className="searchbar-button" onClick={this.handleSearch}>
-          Search
-        </button>
+        <h1 className="searchbar-h1">Welcome to CityWiki</h1>
+        <h4 className="searchbar-h4">
+          Enter any city below and Wiki-Away! If you are looking for your
+          current location just click on MyCityWiki above!
+        </h4>
+        <div className="search-div">
+          <input
+            id="searchTyping"
+            type="text"
+            placeholder="Enter City Name"
+            onChange={(event) => this.handleOnChange(event)}
+            value={this.state.citySearch}
+            style={{ background: "white", opacity: 0.75 }}
+          />
+          <Button onClick={this.handleSearch}>Search</Button>
+        </div>
         <Results cities={this.state.cities} />
       </div>
     );
