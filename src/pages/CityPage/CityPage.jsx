@@ -67,28 +67,35 @@ class CityPage extends Component {
   render() {
     return (
       <div>
-        <div className="city-header">
-          <h1>{this.props.location.state.city.name}</h1>
+        <div>
+          <div className="city-weather">
+            {this.state.temp}&deg;
+            {this.state.icon && (
+              <img
+                src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
+                alt="Current Conditions"
+              />
+            )}
+          </div>
+          <h1 className="city-header">{this.props.location.state.city.name}</h1>
         </div>
         <div className="city-info">
-          <h4>Region: {this.props.location.state.city.region}</h4>
-          <h4>Country: {this.props.location.state.city.country}</h4>
-          <h4>Latitude: {this.props.location.state.city.latitude}</h4>
-          <h4>Longitude: {this.props.location.state.city.longitude}</h4>
-          {/* <h4>Median Monthly Rent: ${this.state.rent}</h4> */}
+          <ul>
+            <li>
+              <span className="city-info-span">Quick Facts:</span>
+            </li>
+            <li>State/Region: {this.props.location.state.city.region}</li>
+            <li>Country: {this.props.location.state.city.country}</li>
+            <li>Latitude: {this.props.location.state.city.latitude}</li>
+            <li>Longitude: {this.props.location.state.city.longitude}</li>
+            {/* <p>Median Monthly Rent: ${this.state.rent}</p> */}
+          </ul>
+        </div>
+        <div>
           <h4>
             Traveling here? Closest Airport -> {this.state.airportCode} -
             {this.state.airportName}
           </h4>
-        </div>
-        <div>
-          {this.state.temp}&deg;
-          {this.state.icon && (
-            <img
-              src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
-              alt="Current Conditions"
-            />
-          )}
         </div>
         <div className="map-div">
           <Map lat={this.state.lat} lng={this.state.lng} />

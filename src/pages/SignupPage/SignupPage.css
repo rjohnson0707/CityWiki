@@ -1,7 +1,7 @@
 .SignupPage {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  padding-top: 5vh;
+  padding-right: 14vw;
 }

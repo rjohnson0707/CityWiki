@@ -1,13 +1,63 @@
 .city-header {
-  font-size: 40px;
+  font-size: 70px;
   text-align: center;
   text-decoration: underline;
   font-family: fantasy;
+  margin-top: 0;
+  padding-top: 10vh;
+}
+
+.city-weather {
+  float: right;
+  margin-right: 10vw;
+  width: 8%;
+  height: 8vh;
+  font-size: 50px;
+  padding-top: 10vh;
 }
 
 .city-info {
-  padding-left: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  margin-left: 10px;
+  height: 18vh;
+  width: 15%;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: left;
+  border: 2px solid black;
+  background-color: lightgray;
+  opacity: 0.8;
 }
+
+.city-info-span {
+  font-weight: bolder;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.city-info li {
+  font-size: 15px;
+  padding: 2px 2px;
+}
+
+/* .results-div {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  margin: 4px, 4px;
+  padding: 4px;
+  height: 40vh;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
+} */
 
 .article-div {
   background-color: lightblue;
