@@ -1,23 +1,43 @@
+.CityPage {
+  margin: 4px, 4px;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-x: auto;
+  text-align: justify;
+}
+
 .city-header {
-  font-size: 70px;
+  font-size: 90px;
   text-align: center;
   text-decoration: underline;
-  font-family: fantasy;
+  font-family: "Chewy", cursive;
   margin-top: 0;
-  padding-top: 10vh;
+  padding-top: 8vh;
 }
 
 .city-weather {
   float: right;
   margin-right: 10vw;
-  width: 8%;
+  width: 12%;
   height: 8vh;
   font-size: 50px;
-  padding-top: 10vh;
+  padding-top: 5vh;
+}
+
+.first-div {
+  display: inline;
+  margin: 10px;
+}
+
+.second-div {
+  display: inline;
+  margin: 10px;
 }
 
 .city-info {
   margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -28,9 +48,13 @@
   overflow-x: hidden;
   overflow-x: auto;
   text-align: left;
-  border: 2px solid black;
-  background-color: lightgray;
+  border: 1px solid #77aaff;
+  box-shadow: -1px 1px #77aaff, -2px 2px #77aaff, -3px 3px #77aaff,
+    -4px 4px #77aaff, -5px 5px #77aaff;
+  background-color: #77aaff;
   opacity: 0.8;
+  padding-right: 0;
+  float: left;
 }
 
 .city-info-span {
@@ -45,27 +69,103 @@
   padding: 2px 2px;
 }
 
-/* .results-div {
-  margin-top: 10px;
+.map-div {
+  float: right;
+  margin-right: 10px;
+  border: 2px solid black;
+}
+
+.article-div {
+  border-bottom: 2px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  opacity: 0.8;
+  color: black;
+  padding: 0 4px;
+}
+
+.article-div:hover {
+  color: gold;
+  background-color: black;
+}
+
+.news-div {
+  margin-top: 250px;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: center;
-  margin: 4px, 4px;
+  margin-left: 15px;
   padding: 4px;
   height: 40vh;
+  width: 40%;
   overflow-x: hidden;
   overflow-x: auto;
   text-align: justify;
-} */
-
-.article-div {
-  background-color: lightblue;
   border: 2px solid black;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  border: 1px solid #77aaff;
+  box-shadow: -1px 1px #77aaff, -2px 2px #77aaff, -3px 3px #77aaff,
+    -4px 4px #77aaff, -5px 5px #77aaff;
+  background-color: #77aaff;
 }
 
-.map-div {
-  margin-bottom: 10px;
+.news-title {
+  font-weight: bold;
+  font-family: "Chewy", cursive;
+  font-size: 25px;
+}
+
+.traveling-div {
+  float: right;
+  width: 40vw;
+  border: 2px solid black;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-x: auto;
+  margin-right: 15px;
+  padding: 10px;
+  border: 1px solid #77aaff;
+  box-shadow: -1px 1px #77aaff, -2px 2px #77aaff, -3px 3px #77aaff,
+    -4px 4px #77aaff, -5px 5px #77aaff;
+  background-color: #77aaff;
+  position: fixed bottom;
+}
+
+.traveling-title {
+  text-decoration: underline;
+  font-family: "Chewy", cursive;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fun-div {
+  width: 40vw;
+  border: 2px solid black;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-x: auto;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #77aaff;
+  box-shadow: -1px 1px #77aaff, -2px 2px #77aaff, -3px 3px #77aaff,
+    -4px 4px #77aaff, -5px 5px #77aaff;
+  background-color: #77aaff;
+}
+
+.bottom-div {
+  display: flex;
+}
+
+.webcam-div {
+  border: 1px solid #77aaff;
+  box-shadow: -1px 1px #77aaff, -2px 2px #77aaff, -3px 3px #77aaff,
+    -4px 4px #77aaff, -5px 5px #77aaff;
+  background-color: #77aaff;
+  width: 24vw;
+  margin: 40px;
+  height: 30vh;
+  align-content: space-between;
 }
