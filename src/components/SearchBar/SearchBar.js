@@ -31,7 +31,7 @@ class SearchBar extends Component {
       params: {
         limit: 10,
         namePrefix: `${searchInput}`,
-        sort: "population",
+        sort: "-population",
       },
     })
       .then((response) => {

@@ -6,6 +6,11 @@ import { getNYTimes } from "../../services/nytimesAPI";
 import { getWebCam } from "../../services/webcamAPI";
 import { getAirport } from "../../services/airportAPI";
 import { getEvents } from "../../services/eventsAPI";
+import {
+  getFood,
+  getAttraction,
+  getHotel,
+} from "../../services/tripAdvisorAPI";
 import Map from "../../components/Map/Map";
 
 class CityPage extends Component {
@@ -18,6 +23,9 @@ class CityPage extends Component {
     airport: null,
     webcams: [],
     events: [],
+    foods: [],
+    places: [],
+    hotels: [],
   };
 
   async componentDidMount() {
@@ -25,7 +33,6 @@ class CityPage extends Component {
     const lng = this.props.location.state.city.longitude;
     const city = this.props.location.state.city.name;
     const weatherData = await getCurWeatherByLatLng(lat, lng);
-    // const city = this.props.location.state.city.name;
     const webcamInfo = await getWebCam(lat, lng);
     const arrWebCams = webcamInfo.result.webcams;
     const citi = await getNYTimes(city);
@@ -33,6 +40,12 @@ class CityPage extends Component {
     const airport = await getAirport(lat, lng);
     const events = await getEvents(city);
     const arrEvents = events._embedded.events;
+    const Foods = await getFood(lat, lng);
+    const arrFoods = Foods.data;
+    const venues = await getAttraction(lat, lng);
+    const arrVenues = venues.data;
+    const hotels = await getHotel(lat, lng);
+    const arrHotels = hotels.data;
     // const rentInfo = await getRent(lat, lng);
     this.setState({
       lat,
@@ -45,8 +58,10 @@ class CityPage extends Component {
       // rent: rentInfo.rent,
       webcams: [...this.state.webcams, ...arrWebCams],
       events: [...this.state.events, ...arrEvents],
+      foods: [...this.state.foods, ...arrFoods],
+      places: [...this.state.places, ...arrVenues],
+      hotels: [...this.state.hotels, ...arrHotels],
     });
-    console.log(arrEvents);
   }
 
   render() {
@@ -62,7 +77,7 @@ class CityPage extends Component {
           <h4>Longitude: {this.props.location.state.city.longitude}</h4>
           {/* <h4>Median Monthly Rent: ${this.state.rent}</h4> */}
           <h4>
-            Traveling here? Closest Airport -> {this.state.airportCode} -{" "}
+            Traveling here? Closest Airport -> {this.state.airportCode} -
             {this.state.airportName}
           </h4>
         </div>
@@ -99,6 +114,35 @@ class CityPage extends Component {
             <div>
               {event.dates.start.localDate}-{event.name} - {event.url} -{" "}
               {event._embedded.venues[0].name}
+            </div>
+          ))}
+        </div>
+        <div>
+          {this.state.foods.map((food, index) => (
+            <div>
+              {food.name} - {food.num_reviews} - {food.location_string} -{" "}
+              {food.distance} - {food.web_url}
+            </div>
+          ))}
+        </div>
+        <div>
+          {this.state.places.map((venue, index) => (
+            <div>
+              {venue.name} - {venue.num_reviews} - {venue.location_string} -{" "}
+              {venue.distance} - {venue.address_obj.street1}
+              {venue.photo.caption} ->{" "}
+              <img src={venue.photo.images.small.url} alt="Venue" />
+            </div>
+          ))}
+        </div>
+        <div>
+          {this.state.hotels.map((hotel, index) => (
+            <div>
+              {hotel.name} - {hotel.num_reviews} - {hotel.location_string}
+              {hotel.distance} - {hotel.price} - {hotel.price_level} -{" "}
+              {hotel.rating}
+              {hotel.photo.caption}
+              <img src={hotel.photo.images.medium.url} alt="Hotel" />
             </div>
           ))}
         </div>
