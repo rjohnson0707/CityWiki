@@ -1,3 +1,11 @@
 .Search {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
+.HomePage {
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 0;
+  padding-top: 150px;
+  font-family: "Chewy", cursive;
+}
