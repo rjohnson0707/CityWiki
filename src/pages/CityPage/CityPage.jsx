@@ -35,18 +35,18 @@ class CityPage extends Component {
     const city = this.props.location.state.city.name;
     const weatherData = await getCurWeatherByLatLng(lat, lng);
     const webcamInfo = await getWebCam(lat, lng);
-    const arrWebCams = webcamInfo.length > 0 ? webcamInfo.result.webcams : [];
+    const arrWebCams = webcamInfo.result.webcams;
     const citi = await getNYTimes(city);
-    let arrCity = citi.length > 0 ? citi.response.docs : [];
+    let arrCity = citi.response.docs;
     const airport = await getAirport(lat, lng);
     const events = await getEvents(city);
-    const arrEvents = events.length > 0 ? events._embedded.events : [];
+    const arrEvents = events._embedded.events;
     const Foods = await getFood(lat, lng);
-    const arrFoods = Foods.length > 0 ? Foods.data : [];
+    const arrFoods = Foods.data;
     const venues = await getAttraction(lat, lng);
-    const arrVenues = venues.length > 0 ? venues.data : [];
+    const arrVenues = venues.data;
     const hotels = await getHotel(lat, lng);
-    const arrHotels = hotels.length > 0 ? hotels.data : [];
+    const arrHotels = hotels.data;
     const rentInfo = await getRent(lat, lng);
     this.setState({
       lat,

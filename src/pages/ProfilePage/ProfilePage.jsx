@@ -36,25 +36,27 @@ class ProfilePage extends Component {
     const lat = details.lat;
     const lng = details.lng;
     const cityDetails = await getCity(lat, lng);
-    const city = cityDetails.data[0].name;
+    const city = cityDetails.data[0];
     const weatherData = await getCurWeatherByLatLng(lat, lng);
     const webcamInfo = await getWebCam(lat, lng);
-    const arrWebCams = webcamInfo.length > 0 ? webcamInfo.result.webcams : [];
-    const citi = await getNYTimes(city);
-    let arrCity = citi.length > 0 ? citi.response.docs : [];
+    const arrWebCams = webcamInfo.result.webcams;
+    const citi = await getNYTimes(city.name);
+    let arrCity = citi.response.docs;
     const airport = await getAirport(lat, lng);
-    const events = await getEvents(city);
-    const arrEvents = events.length > 0 ? events._embedded.events : [];
+    const events = await getEvents(city.name);
+    const arrEvents = events._embedded.events;
     const Foods = await getFood(lat, lng);
-    const arrFoods = Foods.length > 0 ? Foods.data : [];
+    const arrFoods = Foods.data;
     const venues = await getAttraction(lat, lng);
-    const arrVenues = venues.length > 0 ? venues.data : [];
+    const arrVenues = venues.data;
     const hotels = await getHotel(lat, lng);
-    const arrHotels = hotels.length > 0 ? hotels.data : [];
+    const arrHotels = hotels.data;
     const rentInfo = await getRent(lat, lng);
     this.setState({
       lat,
       lng,
+      city: city.name,
+      country: city.country,
       temp: Math.round(weatherData.main.temp),
       icon: weatherData.weather[0].icon,
       news: [...this.state.news, ...arrCity],
@@ -67,7 +69,7 @@ class ProfilePage extends Component {
       places: [...this.state.places, ...arrVenues],
       hotels: [...this.state.hotels, ...arrHotels],
     });
-    console.log(city);
+    console.log(cityDetails);
   }
 
   render() {
@@ -84,7 +86,7 @@ class ProfilePage extends Component {
               />
             )}
           </div>
-          <h1 className="city-header">{this.state.city}</h1>
+          <h1 className="city-header">{this.props.user.name}</h1>
         </div>
         <div className="container">
           <div className="city-info">
@@ -92,11 +94,11 @@ class ProfilePage extends Component {
               <li>
                 <span className="city-info-span">Quick Facts:</span>
               </li>
-              {/* <li>State/Region: {this.props.location.state.city.region}</li>
-              <li>Country: {this.props.location.state.city.country}</li>
-              <li>Latitude: {this.props.location.state.city.latitude}</li>
-              <li>Longitude: {this.props.location.state.city.longitude}</li>
-            <li>Median Monthly Rent: ${this.state.rent}</li>*/}
+              <li>Closest Major City: {this.state.city}</li>
+              <li>Country: {this.state.country}</li>
+              <li>Latitude: {this.state.lat}</li>
+              <li>Longitude: {this.state.lng}</li>
+              <li>Median Monthly Rent: ${this.state.rent}</li>
             </ul>
           </div>
           <div className="map-div">
