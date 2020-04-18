@@ -2,7 +2,8 @@
   background-image: url("https://wallpaperaccess.com/full/439602.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+  width: 100vw;
   background-attachment: fixed;
   position: absolute;
 }
