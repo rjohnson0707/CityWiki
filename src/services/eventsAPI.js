@@ -4,6 +4,3 @@ export function getEvents(citi) {
     method: "GET",
   }).then((res) => res.json());
 }
-
-// key = GOGqpPj59oBPPSp8agheuYnENbRgDlId
-// secret = A27tUAYv2zrW2rCC

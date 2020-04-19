@@ -1,7 +1,6 @@
 import React from "react";
 import "./Results.css";
 import { Link } from "react-router-dom";
-// import { Card } from "react-materialize";
 
 const handleCity = (city) => {
   console.log(city);

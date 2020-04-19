@@ -8,12 +8,11 @@ import SignupPage from "../SignupPage/SignupPage";
 import userService from "../../services/userService";
 import NavBar from "../../components/NavBar/NavBar";
 import CityPage from "../CityPage/CityPage";
-// import * as cityAPI from "../../services/cityAPI";
 
 class App extends Component {
   state = {
     user: userService.getUser(),
-    city: "Chicago",
+    city: "",
   };
 
   handleSignupOrLogin = () => {
@@ -24,11 +23,6 @@ class App extends Component {
     userService.logout();
     this.setState({ user: null });
   };
-
-  // handleCitySearch = async (newCity) => {
-  //   await cityAPI.cities;
-  //   this.getCity();
-  // };
 
   render() {
     return (

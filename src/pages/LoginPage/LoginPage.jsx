@@ -24,7 +24,7 @@ class LoginPage extends Component {
       // Successfully signed up - show GamePage
       this.props.history.push("/");
     } catch (err) {
-      // HERE IS WHERE YOU WOULD USE TOAST OR JIM'S SLACKED' APP (NOT ALERT)
+      // HERE IS WHERE YOU WILL USE TOAST (NOT ALERT)
       alert("Invalid credentials");
     }
   };

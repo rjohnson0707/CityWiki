@@ -41,13 +41,9 @@ class SearchBar extends Component {
       .then((response) => {
         for (let i = 0; i < response.data.data.length; i++) {
           obj[i] = response.data.data[i];
-          // citys.push(response.data.data[i].city );
           citys.push(obj[i]);
         }
-        // console.log(obj);
-        console.log(citys);
         this.setState({ cities: [...this.state.cities, ...citys] });
-        console.log(this.state.cities);
       })
       .catch((error) => {
         console.log(error);

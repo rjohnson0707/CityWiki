@@ -63,7 +63,6 @@ class CityPage extends Component {
       places: [...this.state.places, ...arrVenues],
       hotels: [...this.state.hotels, ...arrHotels],
     });
-    console.log(events.page.totalPages);
   }
 
   render() {
