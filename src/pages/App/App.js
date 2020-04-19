@@ -80,13 +80,17 @@ class App extends Component {
             <Route
               exact
               path="/citypage"
-              render={({ location }) => (
-                <CityPage
-                  user={this.state.user}
-                  city={this.state.city}
-                  location={location}
-                />
-              )}
+              render={({ location }) =>
+                userService.getUser() ? (
+                  <CityPage
+                    user={this.state.user}
+                    city={this.state.city}
+                    location={location}
+                  />
+                ) : (
+                  <Redirect to="/login" />
+                )
+              }
             />
           </Switch>
         </div>
