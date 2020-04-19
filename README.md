@@ -17,3 +17,10 @@
 #### LINKS
 # Try it out here https://citywiki.herokuapp.com/
 # Trello Board - https://trello.com/b/6lrR9dYn/citywiki
+
+
+## IceBox Items
+- Allow "favoriting" of cities that will be stored to a list
+- Deploy using AWS EC2
+- Include more fun API's that allow for unique city touches
+- Map feature allowing you to see your distance away from searched city
