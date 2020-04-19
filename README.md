@@ -7,7 +7,12 @@
 - Full MERN-Stack (MongoDB, Express, React, Node)
 - Deployed on Heroku
 - Materialize
-- API's USED - Google Maps, GeoDB, NYTimes, TripAdvisor, Realtor
+- API's USED - Cometari, GeoDB, GeoServices, Google Maps, NYTimes, OpenWeather, RealtyMole, TicketMaster, TripAdvisor, Windy
+
+#### Screenshots
+![Image of Login](/public/login.png)
+![Image of search](/public/search.png)
+![image of home](/public/home.png)
 
 #### LINKS
 # Try it out here https://citywiki.herokuapp.com/
