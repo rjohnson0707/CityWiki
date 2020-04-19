@@ -40,7 +40,7 @@ class CityPage extends Component {
     let arrCity = citi.response.docs;
     const airport = await getAirport(lat, lng);
     const events = await getEvents(city);
-    const arrEvents = events._embedded.events;
+    const arrEvents = events.page.totalPages > 0 ? events._embedded.events : [];
     const Foods = await getFood(lat, lng);
     const arrFoods = Foods.data;
     const venues = await getAttraction(lat, lng);
@@ -63,7 +63,7 @@ class CityPage extends Component {
       places: [...this.state.places, ...arrVenues],
       hotels: [...this.state.hotels, ...arrHotels],
     });
-    console.log();
+    console.log(events.page.totalPages);
   }
 
   render() {
