@@ -132,7 +132,9 @@ class CityPage extends Component {
                       <ul>
                         <li>Name: {hotel.name}</li>
                         <li>Location: {hotel.location_string}</li>
-                        <li>Distance Away: {hotel.distance}</li>
+                        <li>
+                          Distance Away: {hotel.distance.slice(0, 4)} Miles
+                        </li>
                         <li>
                           Price Range: {hotel.price} - {hotel.price_level}
                         </li>
@@ -158,7 +160,9 @@ class CityPage extends Component {
                       <ul>
                         <li>Name: {venue.name}</li>
                         <li>Location: {venue.location_string}</li>
-                        <li>Distance Away: {venue.distance}</li>
+                        <li>
+                          Distance Away: {venue.distance.slice(0, 4)} Miles
+                        </li>
                         <li>Address: {venue.address_obj.street1}</li>
                         <li>Reviews: {venue.num_reviews}</li>
                         <li>
@@ -185,7 +189,9 @@ class CityPage extends Component {
                       <ul>
                         <li>Name: {food.name}</li>
                         <li>Location: {food.location_string}</li>
-                        <li>Distance Away: {food.distance}</li>
+                        <li>
+                          Distance Away: {food.distance.slice(0, 4)} Miles
+                        </li>
                         <li>Reviews: {food.num_reviews}</li>
                         <li>
                           <a href={food.web_url}>Visit Website</a>
