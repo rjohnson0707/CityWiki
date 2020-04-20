@@ -211,7 +211,12 @@ class CityPage extends Component {
                       <ul>
                         <li>Title: {event.name}</li>
                         <li>Date: {event.dates.start.localDate}</li>
-                        <li>Location: {event._embedded.venues[0].name}</li>
+                        <li>
+                          Location:
+                          {event._embedded
+                            ? event._embedded.venues[0].name
+                            : ""}
+                        </li>
                         <li>
                           <a href={event.url}>Check it out here</a>
                         </li>
