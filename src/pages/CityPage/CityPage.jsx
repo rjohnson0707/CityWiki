@@ -66,448 +66,308 @@ class CityPage extends Component {
   }
 
   render() {
-    return (
-      // <div className="CityPage">
-      //   <div>
-      //     <div className="city-weather">
-      //       <p style={{ fontSize: "20px" }}>Current Weather:</p>
-      //       {this.state.temp}&deg;
-      //       {this.state.icon && (
-      //         <img
-      //           src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
-      //           alt="Current Conditions"
-      //         />
-      //       )}
-      //     </div>
-      //     <h1 className="city-header">{this.props.location.state.city.name}</h1>
-      //   </div>
-      //   <div className="container">
-      //     <div className="city-info">
-      //       <ul>
-      //         <li>
-      //           <span className="city-info-span">Quick Facts:</span>
-      //         </li>
-      //         <li>State/Region: {this.props.location.state.city.region}</li>
-      //         <li>Country: {this.props.location.state.city.country}</li>
-      //         <li>Latitude: {this.props.location.state.city.latitude}</li>
-      //         <li>Longitude: {this.props.location.state.city.longitude}</li>
-      //         <li>Median Monthly Rent: ${this.state.rent}</li>
-      //       </ul>
-      //     </div>
-      //     <div className="map-div">
-      //       <Map lat={this.state.lat} lng={this.state.lng} />
-      //     </div>
-      //   </div>
-      //   <div className="container">
-      //     <div className="news-div">
-      //       <span className="news-title">NY-Times (related articles)</span>
-      //       {this.state.news.map((article, index) => (
-      //         <a href={article.web_url}>
-      //           <div key={index} className="article-div">
-      //             {article.headline.print_headline} -- {""}
-      //             {article.lead_paragraph}
-      //           </div>
-      //         </a>
-      //       ))}
-      //     </div>
-      /* <div className="traveling-div">
-            <div className="traveling-title">Visitor Information</div>
-            <div className="traveling-airport">
-              <h4>
-                Closest Airport:
-                {this.state.airportCode} -{this.state.airportName}
-              </h4>
-            </div>
-            <div className="traveling-hotels">
-              <h4 className="traveling-airport">Closest Hotels:</h4>
-              <ul>
-                {this.state.hotels.map((hotel, index) => (
-                  <li>
-                    <Card>
-                      <img
-                        src={hotel.photo ? hotel.photo.images.small.url : ""}
-                        alt="Hotel"
-                        style={{ float: "right" }}
-                      />
-                      <ul>
-                        <li>Name: {hotel.name}</li>
-                        <li>Location: {hotel.location_string}</li>
-                        <li>
-                          Distance Away: {hotel.distance.slice(0, 4)} Miles
-                        </li>
-                        <li>
-                          Price Range: {hotel.price} - {hotel.price_level}
-                        </li>
-                        <li>Rating: {hotel.rating}</li>
-                        <li>Reviews: {hotel.num_reviews}</li>
-                      </ul>
-                    </Card>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="traveling-hotels">
-              <h4 className="traveling-airport">Closest Things To Do:</h4>
-              <ul>
-                {this.state.places.map((venue, index) => (
-                  <li>
-                    <Card>
-                      <img
-                        src={venue.photo ? venue.photo.images.small.url : ""}
-                        alt="Venue"
-                        style={{ float: "right" }}
-                      />
-                      <ul>
-                        <li>Name: {venue.name}</li>
-                        <li>Location: {venue.location_string}</li>
-                        <li>
-                          Distance Away: {venue.distance.slice(0, 4)} Miles
-                        </li>
-                        <li>Address: {venue.address_obj.street1}</li>
-                        <li>Reviews: {venue.num_reviews}</li>
-                        <li>
-                          Picture Shown:{" "}
-                          {venue.photo ? venue.photo.caption : ""}
-                        </li>
-                      </ul>
-                    </Card>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div> */
-      /* </div> */
-      // <div className="container">
-      //   <div className="fun-div">
-      //     <div className="traveling-title">Events and Food</div>
-      //     <div className="traveling-hotels">
-      //       <h4 className="traveling-airport">Closest Restaurants:</h4>
-      //       <ul>
-      //         {this.state.foods.map((food, index) => (
-      //           <li>
-      //             <Card>
-      //               <ul>
-      //                 <li>Name: {food.name}</li>
-      //                 <li>Location: {food.location_string}</li>
-      //                 <li>Distance Away: {food.distance} Miles</li>
-      //                 <li>Reviews: {food.num_reviews}</li>
-      //                 <li>
-      //                   <a href={food.web_url}>Visit Website</a>
-      //                 </li>
-      //               </ul>
-      //             </Card>
-      //           </li>
-      //         ))}
-      //       </ul>
-      //     </div>
-      //     <div className="traveling-hotels">
-      //       <h4 className="traveling-airport">Upcoming Events:</h4>
-      //       <ul>
-      //         {this.state.events.map((event, index) => (
-      //           <li>
-      //             <Card>
-      //               <ul>
-      //                 <li>Title: {event.name}</li>
-      //                 <li>Date: {event.dates.start.localDate}</li>
-      //                 <li>
-      //                   Location:
-      //                   {event._embedded
-      //                     ? event._embedded.venues[0].name
-      //                     : ""}
-      //                 </li>
-      //                 <li>
-      //                   <a href={event.url}>Check it out here</a>
-      //                 </li>
-      //               </ul>
-      //             </Card>
-      //           </li>
-      //         ))}
-      //       </ul>
-      //     </div>
-      //   </div>
-      // <div className="bottom-div">
-      //   <div className="traveling-title">
-      //     <span className="webcam-title">Current Local Webcams</span>
-      //   </div>
-      //   {this.state.webcams.map((webcam, index) => (
-      //     <div key={index} className="webcam-div">
-      //       <p>{webcam.title}</p>
-      //       <img src={webcam.image.current.preview} alt="webcam" />
-      //     </div>
-      //   ))}
-      //           </div>
-      //         </div>
-      //       </div>
-
-      <html>
-        <head>
-          <title>{this.props.location.state.city.name}</title>
-          <meta charset="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-          />
-          <link rel="stylesheet" href="./CityPage.css" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Girassol&display=swap"
-            rel="stylesheet"
-          />
-        </head>
+    if (this.state.lat === null) {
+      return (
         <body class="is-preload">
-          <div id="wrapper">
-            <header id="header" class="alt">
-              <h1
-                style={{
-                  fontFamily: "Girassol",
-                  fontSize: "90px",
-                  textAlign: "center",
-                  paddingTop: "15vh",
-                }}
-              >
-                {this.props.location.state.city.name}
-              </h1>
-              <div className="weatherData">
-                <p
+          <div
+            style={{
+              textAlign: "center",
+              fontSize: "40px",
+              paddingTop: "100px",
+              color: "black",
+            }}
+          >
+            Loading {this.props.location.state.city.name}'s Information...
+          </div>
+          <div className="globe"></div>
+        </body>
+      );
+    } else {
+      return (
+        <html>
+          <head>
+            <title>{this.props.location.state.city.name}</title>
+            <meta charset="utf-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, user-scalable=no"
+            />
+            <link rel="stylesheet" href="./CityPage.css" />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Girassol&display=swap"
+              rel="stylesheet"
+            />
+          </head>
+          <body class="is-preload">
+            <div id="wrapper">
+              <header id="header" class="alt">
+                <h1
                   style={{
                     fontFamily: "Girassol",
-                    fontSize: "55px",
-                    marginLeft: "10px",
+                    fontSize: "90px",
+                    textAlign: "center",
+                    paddingTop: "15vh",
                   }}
                 >
-                  <p style={{ fontSize: "20px" }}>Current Weather:</p>
-                  {this.state.temp}&deg;
-                  {this.state.icon && (
-                    <img
-                      src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
-                      alt="Current Conditions"
-                    />
-                  )}
-                </p>
-              </div>
-              <div className="map-div" style={{ float: "right" }}>
-                <Map lat={this.state.lat} lng={this.state.lng} />
-              </div>
-            </header>
-
-            {/* Main  */}
-            <div id="main">
-              <section id="intro" class="main">
-                <div class="spotlight">
-                  <div class="content">
-                    <header class="major">
-                      <h2>About {this.props.location.state.city.name}</h2>
-                    </header>
-                    <ul>
-                      <li>
-                        State/Region: {this.props.location.state.city.region}
-                      </li>
-                      <li>Country: {this.props.location.state.city.country}</li>
-                      <li>
-                        Latitude: {this.props.location.state.city.latitude}
-                      </li>
-                      <li>
-                        Longitude: {this.props.location.state.city.longitude}
-                      </li>
-                      <li>Median Monthly Rent: ${this.state.rent}</li>
-                    </ul>
-                  </div>
+                  {this.props.location.state.city.name}
+                </h1>
+                <div className="weatherData">
+                  <p
+                    style={{
+                      fontFamily: "Girassol",
+                      fontSize: "55px",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    <p style={{ fontSize: "20px" }}>Current Weather:</p>
+                    {this.state.temp}&deg;
+                    {this.state.icon && (
+                      <img
+                        src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
+                        alt="Current Conditions"
+                      />
+                    )}
+                  </p>
                 </div>
-              </section>
-              {/* First Section  */}
-              <section id="first" class="main special">
-                <div className="traveling-title">
-                  <span className="webcam-title">Current Events</span>
+                <div className="map-div" style={{ float: "right" }}>
+                  <Map lat={this.state.lat} lng={this.state.lng} />
                 </div>
-                <ul class="features">
-                  <li>
-                    <h3>NY Times</h3>
-                    <button
-                      class="collapsible"
-                      onClick={this.props.handleCollapse}
-                    >
-                      View Articles
-                    </button>
-                    <p class="collapsible-info">
-                      <div className="news-div">
-                        <span className="news-title">Related Articles</span>
-                        {this.state.news.map((article, index) => (
-                          <a href={article.web_url}>
-                            <div key={index} className="article-div">
-                              {article.headline.print_headline} -- {""}
-                              {article.lead_paragraph}
-                            </div>
-                          </a>
-                        ))}
-                      </div>
-                    </p>
-                  </li>
+              </header>
 
-                  <li>
-                    <h3>Visitor Information</h3>
-                    <button
-                      class="collapsible"
-                      onClick={this.props.handleCollapse}
-                    >
-                      View Travel
-                    </button>
-                    <p class="collapsible-info">
-                      <div className="traveling-airport">
-                        <h4>
-                          Closest Airport:
-                          {this.state.airportCode} -{this.state.airportName}
-                        </h4>
-                      </div>
-                      <div className="traveling-hotels">
-                        <h4 className="traveling-airport">Closest Hotels:</h4>
-                        <ul>
-                          {this.state.hotels.map((hotel, index) => (
-                            <li>
-                              <Card>
-                                <img
-                                  src={
-                                    hotel.photo
-                                      ? hotel.photo.images.small.url
-                                      : ""
-                                  }
-                                  alt="Hotel"
-                                  style={{ float: "right" }}
-                                />
-                                <ul>
-                                  <li>Name: {hotel.name}</li>
-                                  <li>Location: {hotel.location_string}</li>
-                                  <li>
-                                    Distance Away: {hotel.distance.slice(0, 4)}{" "}
-                                    Miles
-                                  </li>
-                                  <li>
-                                    Price Range: {hotel.price} -{" "}
-                                    {hotel.price_level}
-                                  </li>
-                                  <li>Rating: {hotel.rating}</li>
-                                  <li>Reviews: {hotel.num_reviews}</li>
-                                </ul>
-                              </Card>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="traveling-hotels">
-                        <h4 className="traveling-airport">
-                          Closest Things To Do:
-                        </h4>
-                        <ul>
-                          {this.state.places.map((venue, index) => (
-                            <li>
-                              <Card>
-                                <img
-                                  src={
-                                    venue.photo
-                                      ? venue.photo.images.small.url
-                                      : ""
-                                  }
-                                  alt="Venue"
-                                  style={{ float: "right" }}
-                                />
-                                <ul>
-                                  <li>Name: {venue.name}</li>
-                                  <li>Location: {venue.location_string}</li>
-                                  <li>
-                                    Distance Away: {venue.distance.slice(0, 4)}{" "}
-                                    Miles
-                                  </li>
-                                  <li>Address: {venue.address_obj.street1}</li>
-                                  <li>Reviews: {venue.num_reviews}</li>
-                                  <li>
-                                    Picture Shown:{" "}
-                                    {venue.photo ? venue.photo.caption : ""}
-                                  </li>
-                                </ul>
-                              </Card>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </p>
-                  </li>
-
-                  <li>
-                    <h3>Places To Go</h3>
-                    <button
-                      class="collapsible"
-                      onClick={this.props.handleCollapse}
-                    >
-                      View Locations
-                    </button>
-                    <p class="collapsible-info">
-                      <div className="traveling-hotels">
-                        <h4 className="traveling-airport">
-                          Closest Restaurants:
-                        </h4>
-                        <ul>
-                          {this.state.foods.map((food, index) => (
-                            <li>
-                              <Card>
-                                <ul>
-                                  <li>Name: {food.name}</li>
-                                  <li>Location: {food.location_string}</li>
-                                  <li>Distance Away: {food.distance} Miles</li>
-                                  <li>Reviews: {food.num_reviews}</li>
-                                  <li>
-                                    <a href={food.web_url}>Visit Website</a>
-                                  </li>
-                                </ul>
-                              </Card>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="traveling-hotels">
-                        <h4 className="traveling-airport">Upcoming Events:</h4>
-                        <ul>
-                          {this.state.events.map((event, index) => (
-                            <li>
-                              <Card>
-                                <ul>
-                                  <li>Title: {event.name}</li>
-                                  <li>Date: {event.dates.start.localDate}</li>
-                                  <li>
-                                    Location:
-                                    {event._embedded
-                                      ? event._embedded.venues[0].name
-                                      : ""}
-                                  </li>
-                                  <li>
-                                    <a href={event.url}>Check it out here</a>
-                                  </li>
-                                </ul>
-                              </Card>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </p>
-                  </li>
-                </ul>
-              </section>
-              {/* Get Started  */}
-              <section id="cta" class="main special">
-                <div className="traveling-title">
-                  <span className="webcam-title">Current Local Webcams</span>
-                </div>
-                <div className="webCams">
-                  {this.state.webcams.map((webcam, index) => (
-                    <div key={index} className="webcam-div">
-                      <p>{webcam.title}</p>
-                      <img src={webcam.image.current.preview} alt="webcam" />
+              {/* Main  */}
+              <div id="main">
+                <section id="intro" class="main">
+                  <div class="spotlight">
+                    <div class="content">
+                      <header class="major">
+                        <h2>About {this.props.location.state.city.name}</h2>
+                      </header>
+                      <ul>
+                        <li>
+                          State/Region: {this.props.location.state.city.region}
+                        </li>
+                        <li>
+                          Country: {this.props.location.state.city.country}
+                        </li>
+                        <li>
+                          Latitude:
+                          {this.props.location.state.city.latitude
+                            .toString()
+                            .slice(0, 6)}
+                        </li>
+                        <li>
+                          Longitude:
+                          {this.props.location.state.city.longitude
+                            .toString()
+                            .slice(1, 8)}
+                        </li>
+                        <li>Median Monthly Rent: ${this.state.rent}</li>
+                      </ul>
                     </div>
-                  ))}
-                </div>
-              </section>
+                  </div>
+                </section>
+                {/* First Section  */}
+                <section id="first" class="main special">
+                  <div className="traveling-title">
+                    <span className="webcam-title">Current Events</span>
+                  </div>
+                  <ul class="features">
+                    <li>
+                      <h3>NY Times</h3>
+                      <button
+                        class="collapsible"
+                        onClick={this.props.handleCollapse}
+                      >
+                        View Articles
+                      </button>
+                      <p class="collapsible-info">
+                        <div className="news-div">
+                          <span className="news-title">Related Articles</span>
+                          {this.state.news.map((article, index) => (
+                            <a href={article.web_url}>
+                              <div key={index} className="article-div">
+                                {article.headline.print_headline} -- {""}
+                                {article.lead_paragraph}
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      </p>
+                    </li>
+
+                    <li>
+                      <h3>Visitor Information</h3>
+                      <button
+                        class="collapsible"
+                        onClick={this.props.handleCollapse}
+                      >
+                        View Travel
+                      </button>
+                      <p class="collapsible-info">
+                        <div className="traveling-airport">
+                          <h4>
+                            Closest Airport:
+                            {this.state.airportCode} -{this.state.airportName}
+                          </h4>
+                        </div>
+                        <div className="traveling-hotels">
+                          <h4 className="traveling-airport">Closest Hotels:</h4>
+                          <ul>
+                            {this.state.hotels.map((hotel, index) => (
+                              <li>
+                                <Card>
+                                  <img
+                                    src={
+                                      hotel.photo
+                                        ? hotel.photo.images.small.url
+                                        : ""
+                                    }
+                                    alt="Hotel"
+                                    style={{ float: "right" }}
+                                  />
+                                  <ul>
+                                    <li>Name: {hotel.name}</li>
+                                    <li>Location: {hotel.location_string}</li>
+                                    <li>
+                                      Distance Away:{" "}
+                                      {hotel.distance.slice(0, 4)} Miles
+                                    </li>
+                                    <li>
+                                      Price Range: {hotel.price} -{" "}
+                                      {hotel.price_level}
+                                    </li>
+                                    <li>Rating: {hotel.rating}</li>
+                                    <li>Reviews: {hotel.num_reviews}</li>
+                                  </ul>
+                                </Card>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="traveling-hotels">
+                          <h4 className="traveling-airport">
+                            Closest Things To Do:
+                          </h4>
+                          <ul>
+                            {this.state.places.map((venue, index) => (
+                              <li>
+                                <Card>
+                                  <img
+                                    src={
+                                      venue.photo
+                                        ? venue.photo.images.small.url
+                                        : ""
+                                    }
+                                    alt="Venue"
+                                    style={{ float: "right" }}
+                                  />
+                                  <ul>
+                                    <li>Name: {venue.name}</li>
+                                    <li>Location: {venue.location_string}</li>
+                                    <li>
+                                      Distance Away:{" "}
+                                      {venue.distance.slice(0, 4)} Miles
+                                    </li>
+                                    <li>
+                                      Address: {venue.address_obj.street1}
+                                    </li>
+                                    <li>Reviews: {venue.num_reviews}</li>
+                                    <li>
+                                      Picture Shown:{" "}
+                                      {venue.photo ? venue.photo.caption : ""}
+                                    </li>
+                                  </ul>
+                                </Card>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </p>
+                    </li>
+
+                    <li>
+                      <h3>Places To Go</h3>
+                      <button
+                        class="collapsible"
+                        onClick={this.props.handleCollapse}
+                      >
+                        View Locations
+                      </button>
+                      <p class="collapsible-info">
+                        <div className="traveling-hotels">
+                          <h4 className="traveling-airport">
+                            Closest Restaurants:
+                          </h4>
+                          <ul>
+                            {this.state.foods.map((food, index) => (
+                              <li>
+                                <Card>
+                                  <ul>
+                                    <li>Name: {food.name}</li>
+                                    <li>Location: {food.location_string}</li>
+                                    <li>
+                                      Distance Away: {food.distance} Miles
+                                    </li>
+                                    <li>Reviews: {food.num_reviews}</li>
+                                    <li>
+                                      <a href={food.web_url}>Visit Website</a>
+                                    </li>
+                                  </ul>
+                                </Card>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="traveling-hotels">
+                          <h4 className="traveling-airport">
+                            Upcoming Events:
+                          </h4>
+                          <ul>
+                            {this.state.events.map((event, index) => (
+                              <li>
+                                <Card>
+                                  <ul>
+                                    <li>Title: {event.name}</li>
+                                    <li>Date: {event.dates.start.localDate}</li>
+                                    <li>
+                                      Location:
+                                      {event._embedded
+                                        ? event._embedded.venues[0].name
+                                        : ""}
+                                    </li>
+                                    <li>
+                                      <a href={event.url}>Check it out here</a>
+                                    </li>
+                                  </ul>
+                                </Card>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </p>
+                    </li>
+                  </ul>
+                </section>
+                {/* Get Started  */}
+                <section id="cta" class="main special">
+                  <div className="traveling-title">
+                    <span className="webcam-title">Current Local Webcams</span>
+                  </div>
+                  <div className="webCams">
+                    {this.state.webcams.map((webcam, index) => (
+                      <div key={index} className="webcam-div">
+                        <p>{webcam.title}</p>
+                        <img src={webcam.image.current.preview} alt="webcam" />
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </div>
             </div>
-          </div>
-        </body>
-      </html>
-    );
+          </body>
+        </html>
+      );
+    }
   }
 }
 export default CityPage;

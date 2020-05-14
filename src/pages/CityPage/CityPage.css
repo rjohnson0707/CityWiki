@@ -353,6 +353,18 @@ html {
   box-sizing: border-box;
 }
 
+.globe {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  margin-left: 42vw;
+  margin-top: 50px;
+  background-position: center;
+  background-attachment: fixed;
+  background: url("https://i.pinimg.com/originals/0d/c9/68/0dc968448592a7d533096b74c263cc40.gif");
+  animation: mover 5s infinite;
+}
+
 *,
 *:before,
 *:after {
