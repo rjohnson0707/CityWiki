@@ -189,9 +189,7 @@ class CityPage extends Component {
                       <ul>
                         <li>Name: {food.name}</li>
                         <li>Location: {food.location_string}</li>
-                        <li>
-                          Distance Away: {food.distance.slice(0, 4)} Miles
-                        </li>
+                        <li>Distance Away: {food.distance} Miles</li>
                         <li>Reviews: {food.num_reviews}</li>
                         <li>
                           <a href={food.web_url}>Visit Website</a>
