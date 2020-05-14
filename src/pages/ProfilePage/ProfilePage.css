@@ -12,9 +12,16 @@
   margin-left: 2vw;
 }
 
+button {
+  background: transparent;
+}
+
+button:hover {
+  background: gold;
+}
+
 html,
 body,
-div,
 span,
 applet,
 object,
@@ -170,9 +177,14 @@ textarea {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: 200;
+  background: transparent;
 }
 
 .active,
+.collapsible:hover {
+  background-color: blue;
+}
+
 .collapsible:hover {
   background-color: gold;
 }
@@ -321,4 +333,12 @@ h5 {
 
 h6 {
   font-size: 0.7em;
+}
+
+.article-div {
+  background-color: transparent;
+}
+
+.news-span:hover {
+  color: gold;
 }

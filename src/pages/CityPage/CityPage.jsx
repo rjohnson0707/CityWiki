@@ -184,19 +184,33 @@ class CityPage extends Component {
                       <button
                         class="collapsible"
                         onClick={this.props.handleCollapse}
+                        style={{ background: "transparent" }}
                       >
-                        View Articles
+                        View Articles <br />
+                        <span style={{ fontSize: "10px" }}>
+                          {" "}
+                          (double-click)
+                        </span>
                       </button>
                       <p class="collapsible-info">
                         <div className="news-div">
                           <span className="news-title">Related Articles</span>
                           {this.state.news.map((article, index) => (
-                            <a href={article.web_url}>
-                              <div key={index} className="article-div">
-                                {article.headline.print_headline} -- {""}
-                                {article.lead_paragraph}
-                              </div>
-                            </a>
+                            <div
+                              key={index}
+                              style={{
+                                background: "transparent",
+                                padding: "10px",
+                              }}
+                            >
+                              {article.headline.print_headline} -- {""}
+                              {article.lead_paragraph}{" "}
+                              <a href={article.web_url}>
+                                <span style={{ textDecoration: "underline" }}>
+                                  read more...
+                                </span>
+                              </a>
+                            </div>
                           ))}
                         </div>
                       </p>
@@ -207,8 +221,13 @@ class CityPage extends Component {
                       <button
                         class="collapsible"
                         onClick={this.props.handleCollapse}
+                        style={{ background: "transparent" }}
                       >
-                        View Travel
+                        View Travel <br />
+                        <span style={{ fontSize: "10px" }}>
+                          {" "}
+                          (double-click)
+                        </span>
                       </button>
                       <p class="collapsible-info">
                         <div className="traveling-airport">
@@ -222,7 +241,7 @@ class CityPage extends Component {
                           <ul>
                             {this.state.hotels.map((hotel, index) => (
                               <li>
-                                <Card>
+                                <Card style={{ background: "transparent" }}>
                                   <img
                                     src={
                                       hotel.photo
@@ -258,7 +277,7 @@ class CityPage extends Component {
                           <ul>
                             {this.state.places.map((venue, index) => (
                               <li>
-                                <Card>
+                                <Card style={{ background: "transparent" }}>
                                   <img
                                     src={
                                       venue.photo
@@ -297,8 +316,13 @@ class CityPage extends Component {
                       <button
                         class="collapsible"
                         onClick={this.props.handleCollapse}
+                        style={{ background: "transparent" }}
                       >
-                        View Locations
+                        View Locations <br />
+                        <span style={{ fontSize: "10px" }}>
+                          {" "}
+                          (double-click)
+                        </span>
                       </button>
                       <p class="collapsible-info">
                         <div className="traveling-hotels">
@@ -308,7 +332,7 @@ class CityPage extends Component {
                           <ul>
                             {this.state.foods.map((food, index) => (
                               <li>
-                                <Card>
+                                <Card style={{ background: "transparent" }}>
                                   <ul>
                                     <li>Name: {food.name}</li>
                                     <li>Location: {food.location_string}</li>
@@ -332,7 +356,7 @@ class CityPage extends Component {
                           <ul>
                             {this.state.events.map((event, index) => (
                               <li>
-                                <Card>
+                                <Card style={{ background: "transparent" }}>
                                   <ul>
                                     <li>Title: {event.name}</li>
                                     <li>Date: {event.dates.start.localDate}</li>
