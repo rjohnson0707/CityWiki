@@ -24,6 +24,23 @@ class App extends Component {
     this.setState({ user: null });
   };
 
+  handleCollapse = () => {
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  };
+
   render() {
     return (
       <div className="App">
@@ -65,7 +82,10 @@ class App extends Component {
               path="/profile"
               render={() =>
                 userService.getUser() ? (
-                  <ProfilePage user={this.state.user} />
+                  <ProfilePage
+                    user={this.state.user}
+                    handleCollapse={this.handleCollapse}
+                  />
                 ) : (
                   <Redirect to="/login" />
                 )
@@ -80,6 +100,7 @@ class App extends Component {
                     user={this.state.user}
                     city={this.state.city}
                     location={location}
+                    handleCollapse={this.handleCollapse}
                   />
                 ) : (
                   <Redirect to="/login" />

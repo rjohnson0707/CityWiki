@@ -65,23 +65,6 @@ class CityPage extends Component {
     });
   }
 
-  handleCollapse = () => {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-  };
-
   render() {
     return (
       // <div className="CityPage">
@@ -338,7 +321,10 @@ class CityPage extends Component {
                 <ul class="features">
                   <li>
                     <h3>NY Times</h3>
-                    <button class="collapsible" onClick={this.handleCollapse}>
+                    <button
+                      class="collapsible"
+                      onClick={this.props.handleCollapse}
+                    >
                       View Articles
                     </button>
                     <p class="collapsible-info">
@@ -358,7 +344,10 @@ class CityPage extends Component {
 
                   <li>
                     <h3>Visitor Information</h3>
-                    <button class="collapsible" onClick={this.handleCollapse}>
+                    <button
+                      class="collapsible"
+                      onClick={this.props.handleCollapse}
+                    >
                       View Travel
                     </button>
                     <p class="collapsible-info">
@@ -443,7 +432,10 @@ class CityPage extends Component {
 
                   <li>
                     <h3>Places To Go</h3>
-                    <button class="collapsible" onClick={this.handleCollapse}>
+                    <button
+                      class="collapsible"
+                      onClick={this.props.handleCollapse}
+                    >
                       View Locations
                     </button>
                     <p class="collapsible-info">
