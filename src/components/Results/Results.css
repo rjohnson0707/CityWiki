@@ -1,34 +1,27 @@
-.city-btn {
-  margin-bottom: 5px;
+.results-div {
+  position: absolute;
+  bottom: initial;
+  width: 100vw;
+  padding-bottom: 15vh;
+  background-color: lightgray;
+  background-image: url("../../pages/CityPage/overlay.png"),
+    -moz-linear-gradient(45deg, lightgray 15%, rgb(63, 60, 60) 85%);
+  background-image: url("../../pages/CityPage/overlay.png"),
+    -webkit-linear-gradient(45deg, lightgray 15%, rgb(63, 60, 60) 85%);
+  background-image: url("../../pages/CityPage/overlay.png"),
+    -ms-linear-gradient(45deg, lightgray 15%, rgb(63, 60, 60) 85%);
+  background-image: url("../../pages/CityPage/overlay.png"),
+    linear-gradient(45deg, lightgray 15%, rgb(63, 60, 60) 85%);
 }
 
 .city-div {
-  width: 24vw;
-  margin: 5px;
-  color: black;
-  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: left;
 }
 
-.city-list {
-  background-color: white;
-  border: 2px solid black;
-  margin: 5px 5px;
-}
-
-.city-list:hover {
-  background-color: rgb(191, 218, 240);
-}
-
-.results-div {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
-  margin: 4px, 4px;
-  padding: 4px;
-  height: 40vh;
-  overflow-x: hidden;
-  overflow-x: auto;
-  text-align: justify;
+.city-div:hover {
+  opacity: 0.8;
+  background-color: grey;
 }

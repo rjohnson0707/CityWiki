@@ -11,7 +11,7 @@
 }
 .searchbar-div {
   text-align: center;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -19,6 +19,8 @@
   justify-content: center;
   padding: 0 25vw;
   margin-top: 15vh;
+  margin-bottom: 50vh;
+  height: 10vh;
 }
 
 .searchbar-button {
@@ -29,4 +31,12 @@
   color: #ffffff;
   cursor: pointer;
   font-size: 18px;
+}
+
+.resultsPage {
+  position: fixed;
+  bottom: auto;
+  height: 1000px;
+  width: 100%;
+  margin-bottom: 60vh;
 }

@@ -106,7 +106,7 @@ class CityPage extends Component {
                     fontFamily: "Girassol",
                     fontSize: "90px",
                     textAlign: "center",
-                    paddingTop: "15vh",
+                    paddingTop: "10vh",
                   }}
                 >
                   {this.props.location.state.city.name}
@@ -119,7 +119,9 @@ class CityPage extends Component {
                       marginLeft: "10px",
                     }}
                   >
-                    <p style={{ fontSize: "20px" }}>Current Weather:</p>
+                    <p style={{ fontSize: "20px", margin: "0" }}>
+                      Current Weather:
+                    </p>
                     {this.state.temp}&deg;
                     {this.state.icon && (
                       <img
@@ -129,7 +131,10 @@ class CityPage extends Component {
                     )}
                   </p>
                 </div>
-                <div className="map-div" style={{ float: "right" }}>
+                <div
+                  className="map-div"
+                  style={{ float: "right", marginRight: "10px" }}
+                >
                   <Map lat={this.state.lat} lng={this.state.lng} />
                 </div>
               </header>
@@ -138,9 +143,11 @@ class CityPage extends Component {
               <div id="main">
                 <section id="intro" class="main">
                   <div class="spotlight">
-                    <div class="content">
+                    <div className="facts-div">
                       <header class="major">
-                        <h2>About {this.props.location.state.city.name}</h2>
+                        <h2 style={{ fontWeight: "bold" }}>
+                          About {this.props.location.state.city.name}
+                        </h2>
                       </header>
                       <ul>
                         <li>

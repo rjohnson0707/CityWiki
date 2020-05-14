@@ -9,6 +9,9 @@ const handleCity = (city) => {
 const Results = (props) => {
   return props.cities ? (
     <div className="results-div">
+      <h5 style={{ fontFamily: '"Chewy", cursive', fontSize: "40px" }}>
+        Results
+      </h5>
       <ul>
         {props.cities.map((city, index) => (
           <div className="city-list">
