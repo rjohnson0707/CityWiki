@@ -95,6 +95,24 @@ class ProfilePage extends Component {
             />
           </head>
 
+          <div style={{ height: "100vh", width: "100%" }}>
+            <h4
+              style={{
+                textAlign: "center",
+                fontSize: "64px",
+                fontWeight: "bolder",
+                paddingTop: "10vh",
+                fontFamily: "chewy",
+              }}
+            >
+              Scroll Down!
+            </h4>
+            <img
+              src={require("../../components/SearchBar/giphy.gif")}
+              alt="arrow"
+              style={{ paddingLeft: "400px" }}
+            />
+          </div>
           <body class="is-preload">
             <div id="wrapper">
               <header id="header" class="alt">
@@ -377,7 +395,7 @@ class ProfilePage extends Component {
       );
     } else {
       return (
-        <body class="is-preload">
+        <div>
           <div
             style={{
               textAlign: "center",
@@ -389,7 +407,7 @@ class ProfilePage extends Component {
             Getting Best Results...
           </div>
           <div className="globe"></div>
-        </body>
+        </div>
       );
     }
   }

@@ -73,8 +73,13 @@ class SearchBar extends Component {
             <Button onClick={this.handleSearch}>Search</Button>
             <div>
               <img
-                src="https://lh3.googleusercontent.com/proxy/--RVMiyVsxka-0eWkO5GgHEuAKrzwhXxOOTbHhfyv5NfJMs2IiOXynwKtSVFNJcvKM2u1--9kKu9ENInEOVvodo4YIhIygAD17iqCNnFqDUyYFomVCzX"
+                src={require("./giphy.gif")}
                 alt="Arrow"
+                style={{
+                  marginBottom: "20px",
+                  height: "420px",
+                  width: "420px",
+                }}
               ></img>
             </div>
           </div>
