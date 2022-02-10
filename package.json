@@ -14,7 +14,7 @@
     "materialize": "^1.0.0",
     "mongoose": "^5.9.7",
     "morgan": "^1.10.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
